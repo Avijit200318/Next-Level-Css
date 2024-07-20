@@ -8,7 +8,7 @@ i{
     height: 4px;
     background: #0f0;
     pointer-events: none;
-    animation: animate 0.3s linear forwards;
+    animation: animate 0.4s linear forwards;
 }
 
 @keyframes animate
