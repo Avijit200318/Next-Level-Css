@@ -8,15 +8,17 @@ i{
     height: 4px;
     background: #0f0;
     pointer-events: none;
-    animation: animate 0.4s linear forwards;
+    animation: animate 2s linear forwards;
 }
 
 @keyframes animate
 {
     0%{
         opacity: 1;
+        transform: translate(0, 0);
     }
     100%{
         opacity: 0;
+        transform: translate(var(--x), var(--y));
     }
 }
