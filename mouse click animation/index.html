@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="">Hello World</h2>
+
+    <script>
+        let body = document.querySelector('body');
+        let h2 = document.querySelector('h2');
+        body.addEventListener('click', function(event) {
+            for(let i = 0; i< 50; i++){
+                let spark = document.createElement('i');
+
+                // to set circle some distance to click spot
+                spark.style.top = (event.clientY - body.offsetTop) + 'px';
+                spark.style.top = (event.clientY - body.offsetLeft) + 'px';
+
+                let randomX = (Math.random() - 0.5) * window.innerWidth / 1.5;
+                let randomY = (Math.random() - 0.5) * window.innerHeight / 1.5;
+
+                spark.style.setProperty('--randomX', randomX + 'px');
+                spark.style.setProperty('--randomY', randomY + 'px');
+
+                body.appendChild(spark);
+
+                setTimeout(() => {
+                    spark.remove();
+                }, 2000);
+            }
+        })
+    </script>
+</body>
+</html>
