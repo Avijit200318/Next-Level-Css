@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function spark(event){
+            let i = document.createElement('i');
+            i.style.left = (event.pageX) + 'px';
+            i.style.top = (event.pageY) + 'px';
+
+            document.body.appendChild(i);
+
+            setTimeout(() => {
+                document.body.removeChild(i);
+            }, 2000);
+        }
+
+        document.addEventListener('mousemove', spark);
+    </script>
+</body>
+</html>
