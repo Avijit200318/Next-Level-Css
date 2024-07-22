@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 100vw;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 50%;
+    height: 50%;
+    /* we need to set a backgroud color */
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    /* ::after this -5px increase the gradient value beyound the box */
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    /* we need to add a gradient color to show filter changing effect between two color */
+    background: linear-gradient(45deg, #8274ed, #1005da);
+    pointer-events: none;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        /* this animation blur the hole thing and hue-rotate change the color */
+        filter: blur(60px) hue-rotate(0deg);
+    }
+    100%{
+        filter: blur(60px) hue-rotate(360deg);
+    }
+}
