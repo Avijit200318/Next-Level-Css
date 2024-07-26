@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container .button{
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: #0a2437;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: white;
+    transition: 0.5s;
+    position: relative;
+    overflow:hidden;
+    border: none;
+    cursor: pointer;
+}
+
+.container #glow:hover{
+    color: black;
+    transition-delay: 0.3s;
+    background: white;
+    box-shadow: 0 0 10px white,
+    0 0 40px white,
+    0 0 80px white;
+}
+
+/* 2nd button */
+#border span{
+    position: absolute;
+    display: block;
+}
+
+#border span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(90deg, transparent, white);
+}
+
+#border span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2.5px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, white);
+}
+
+#border span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(270deg, transparent, white);
+}
+#border span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2.5px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, white);
+}
+
+#border:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#border:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#border:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+#border:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 1s;
+}
+
+.container #border:hover{
+    transition-delay: 1.25s;
+    background: white;
+    color: black;
+    box-shadow: 0 0 10px white,
+    0 0 40px white,
+    0 0 80px white;
+}
+
+/* 3rd button */
+#auto span{
+    position: absolute;
+    display: block;
+}
+
+#auto span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(90deg, transparent, white);
+    animation: animate1 1s infinite;
+}
+
+@keyframes animate1 {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+#auto span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2.5px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, white);
+    animation: animate2 1s 0.25s infinite;
+}
+
+@keyframes animate2 {
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+
+#auto span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(270deg, transparent, white);
+    animation: animate3 1s 0.5s infinite;
+}
+
+@keyframes animate3 {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+#auto span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2.5px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, white);
+    animation: animate4 1s 0.75s infinite;
+}
+
+@keyframes animate4 {
+    0%{
+        bottom: -100%;
+    }
+    100%{
+        bottom: 100%;
+    }
+}
+
+.container #auto:hover{
+    transition-delay: 0.5s;
+    background: white;
+    color: black;
+    box-shadow: 0 0 10px white,
+    0 0 40px white,
+    0 0 80px white;
+}
+
+/* 4th button */
+.newButton{
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    background-color: #19384d;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#twoBorder .in{
+    padding: 1rem 2rem;
+    position: relative;
+    background: #0a2437;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+#twoBorder::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 10rem;
+    background: white;
+    transform: translate(-50%, -50%) rotate(55deg);
+    animation: twoBorder 2s linear infinite;
+}
+@keyframes twoBorder {
+    100%{
+        transform: translate(-50%, -50%) rotate(225deg);
+    }
+}
+
+#twoBorder:hover .in{
+    transition-delay: 0.5s;
+    background: white;
+    color: black;
+}
+#twoBorder:hover{
+    transition-delay: 0.5s;
+    background: white;
+    box-shadow: 0 0 10px white,
+    0 0 40px white,
+    0 0 80px white;
+}
