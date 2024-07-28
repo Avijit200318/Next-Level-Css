@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cursor"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        let body = document.querySelector('body');
+        body.onclick = () => {
+            body.classList.toggle('dark');
+        }
+
+        let cursor = document.querySelector('.cursor');
+        for(let i = 0; i< 200; i++)
+        {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            cursor.appendChild(circle);
+        }
+
+        document.body.addEventListener('mousemove', (event) => {
+            // clientX and clientY provide the horizontal and vertical value of mouse pointer
+            gsap.to('.circle', {
+                x: event.clientX,
+                y: event.clientY,
+                stagger: -0.0015,
+                // stagger help to animate multiple element in different time
+                scale: (i, target) => {
+                    return 1 + (i * (2 / 200));
+                }
+                // target refers to the specific element being animated at that moment within the stagger
+            })
+        })
+    </script>
+</body>
+</html>
