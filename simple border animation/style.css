@@ -46,6 +46,9 @@ body {
     height: 600px;
     width: 200px;
     background: #fff;
+    box-shadow: 0 0 10px white,
+    0 0 40px white,
+    0 0 80px white;
     animation: animate 3s linear infinite;
 }
 
