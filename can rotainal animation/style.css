@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: rgb(52, 52, 232);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.cane {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* width: 500px; */
+    height: 500px;
+    z-index: 2;
+    transition: 0.7s;
+    --left: 230px;
+    display: flex;
+    background: yellow;
+}
+
+.cane .pack{
+    position: absolute;
+    /* set the pack image first and then the can image. set the first image a variable left */
+    background: var(--bg) var(--left), url(images/mockup.png);
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2/4;
+    background-blend-mode: multiply;
+    mask-image: url(images/mockup.png);
+    mask-size: auto 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.7s;
+}
+
+.container .cane:hover {
+    --left: -1000px;
+    transform: translateX(-50%) translateY(-60%);
+}
+
+.container .cane .pack:nth-child(2) {
+    opacity: 0;
+}
+
+
+.container .cane:hover .pack:nth-child(2) {
+    opacity: 1;
+}
