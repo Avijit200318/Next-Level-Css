@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.outside {
+    background-image: conic-gradient(from var(--angle),#ff4545, #FFFF00, #0000FF,#FF0000);
+    padding: 4px;
+    border-radius: 10px;
+    position: relative;
+    animation: 3s animate linear infinite;
+}
+
+.outside::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #FFFF00, #0000FF,#FF0000);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    filter: blur(1.5rem);
+    opacity: 0.8;
+    animation: 3s animate linear infinite;
+    /* z-index: 1; */
+}
+
+@keyframes animate{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
+
+.card {
+    width: 20rem;
+    height: 20rem;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background: #1c1f2b;
+    position: relative;
+}
+
+.card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    padding: 1rem 0;
+    color: gray;
+}
