@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #081b29;
+}
+
+.container{
+    padding: 0 1rem;
+    border: 2px solid white;
+}
+
+h2{
+    position: relative;
+    font-size: 8rem;
+    color: transparent;
+    -webkit-text-stroke: 0.1rem #00abf0;
+    background-image: linear-gradient(#00abf0, #00abf0);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -66rem 0;
+    /* set the minimum position value so that the color did not show up. if you add padding then add extra padding value also for example here at first it was -64rem later I add 1rem padding both left and right side of the text. then we have to change the -66rem position */
+    padding: 0 1rem;
+    animation: animate 6s linear infinite;
+}
+
+h2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-right: 4px solid #00abf0;
+    animation: lineAnimate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100%{
+        background-position: -66rem 0;
+    }
+    80%,90%{
+        background-position: 0 0;
+    }
+}
+
+@keyframes lineAnimate {
+    0%, 10%, 100%{
+        width: 0%;
+    }
+    80%,90%{
+        width: 100%;
+    }
+}
