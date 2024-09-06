@@ -79,29 +79,17 @@ body{
 }
 
 @keyframes topLayerAnimate {
-    0%, 2.5%{
+    0%, 5%{
         transform: translateX(0);
     }
-    5%{
-        transform: translate(0);
-    }
-    45%{
-        transform: translateX(100%);
-    }
-    47.5%, 50%{
+    45%, 50%{
         transform: translateX(100%);
     }
 
-    50.001%, 52.5%{
+    50.001%, 55%{
         transform: translateX(-100%);
     }
-    55%{
-        transform: translate(-100%);
-    }
-    95%{
-        transform: translateX(0%);
-    }
-    97.5%, 100%{
+    95%, 100%{
         transform: translateX(0%);
     }
 }
