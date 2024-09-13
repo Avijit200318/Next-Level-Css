@@ -67,7 +67,7 @@ html, body{
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     transition: 1s;
 }
