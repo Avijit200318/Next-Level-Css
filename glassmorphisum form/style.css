@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colour{
+    position: absolute;
+    filter: blur(150px);
+}
+
+.colour:nth-child(1){
+    top: 2rem;
+    width: 30rem;
+    height: 15rem;
+    background: #bf4ad4;
+}
+
+.colour:nth-child(2){
+    left: 12rem;
+    bottom: 2rem;
+    width: 30rem;
+    height: 20rem;
+    background: #ffa500;
+}
+
+.colour:nth-child(3){
+    right: 10rem;
+    bottom: 2rem;
+    width: 30rem;
+    height: 20rem;
+    background: #2b67f3;
+}
+
+/* threebox */
+
+.box1, .box2, .box3{
+    width: 7rem;
+    height: 7rem;
+    background: #ffffff1a;
+    box-shadow: 0 25px 45px #0000001a;
+    border: 1px solid #ffffff80;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+.box1{
+    left: 25%;
+    bottom: 30%;
+}
+.box2{
+    left: 35%;
+    top: 15%;
+}
+.box3{
+    right: 35%;
+    bottom: 15%;
+    z-index: 3;
+}
+
+/* form style */
+.formContainer{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 10px;
+    border: 1px solid #ffffff80;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+    backdrop-filter: blur(5px);
+    background: #ffffff1a;
+    box-shadow: 0 25px 45px #0000001a;
+    z-index: 2;
+}
+
+.formContainer h1{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+.formContainer form{
+    padding: 2rem 1rem;
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid white; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formContainer form input{
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background: #ffffff33;
+    color: white;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid #ffffff80;
+    box-shadow: 0 5px 15px #0000001a;
+}
+
+#submit{
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #5F5C5C;
+    border-radius: 20px;
+    background: white;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#submit:hover{
+    transform: scale(1.05);
+}
+
+.formBox{
+    color: white;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.formBox p{
+    margin-bottom: 0.2rem;
+}
+
+.formBox p a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
