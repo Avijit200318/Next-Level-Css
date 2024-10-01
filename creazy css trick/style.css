@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background: #180909;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* add 3d representation to the container div element */
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.container .item{
+    width: 10rem;
+    height: 20rem;
+    /* add brightness animation effect */
+    transition: 0.5s;
+    filter: brightness(0);
+    cursor: pointer;
+}
+
+.container .item:hover{
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+
+/* add hover animation to the right item */
+.container .item:hover + *{
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+}
+
+.container .item:hover + * + *{
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(20deg);
+}
+
+/* for left of the hover */
+/* +* represent the right element but for left we don't have any thing like this */
+
+.container .item:has(+ *:hover){
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(-40deg);
+}
+
+.container .item:has(+ * + *:hover){
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(-20deg);
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
