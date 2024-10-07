@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #081b29;
+}
+
+@property --a {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+}
+
+.box{
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10px;
+    background: repeating-conic-gradient(from var(--a),#00abf0 0%, #00abf0 5%, transparent 5%, transparent 40%, #00abf0 50%);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        --a: 0deg;
+    }
+    100%{
+        --a: 360deg;
+    }
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: repeating-conic-gradient(from var(--a),#00abf0 0%, #00abf0 5%, transparent 5%, transparent 40%, #00abf0 50%);
+    animation: animate 4s linear infinite;
+    animation-delay: -1s;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    width: 96%;
+    height: 96%;
+    background: #1a3142;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.textBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 4%;
+    color: #00abf0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.textBox p{
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
