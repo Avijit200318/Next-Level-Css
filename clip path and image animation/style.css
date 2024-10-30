@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lora", serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: #17153B;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.container .box {
+    position: relative;
+    width: 18rem;
+    height: 25rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EBD3F8;
+    background: linear-gradient(135deg ,#7A1CAC, #AD49E1, #EBD3F8);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.clipBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0% at 50% 50%);
+    overflow: hidden;
+    transition: 1.2s;
+}
+
+.clipBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box h1{
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 400;
+    padding: 0 1rem;
+}
+
+.box:hover .clipBox{
+    clip-path: circle(100% at 50% 50%);
+}
