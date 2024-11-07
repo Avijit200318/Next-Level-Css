@@ -1,33 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
-
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+    font-family: "Playwrite GB S", serif;
 }
 
-body{
-    font-family: 'Exo', sans-serif;
+body, html{
+    width: 100%;
+    height: 100%;
 }
 
+.container{
+    width: 100%;
+    height: 100vh;
+}
 
 .context {
-    width: 100%;
     position: absolute;
-    top:50vh;
-    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .context h1{
     text-align: center;
     color: #fff;
-    font-size: 50px;
+    font-size: 3.5rem;
 }
-
 
 .area{
     background: #4e54c8;  
     width: 100%;
-    height:100vh;
+    height:100%;
 }
 
 .circles{
