@@ -64,7 +64,7 @@ body, html{
     animation-delay: 0s;
 }
 
-
+/* copy code from here */
 .circles li:nth-child(2){
     left: 10%;
     width: 20px;
@@ -133,7 +133,7 @@ body, html{
     animation-duration: 11s;
 }
 
-
+/* copy code till here */
 
 @keyframes animate {
 
