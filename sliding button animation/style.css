@@ -20,7 +20,7 @@ html, body{
     gap: 1rem;
 }
 
-#btn{
+.btn{
     padding: 1rem 2rem;
     font-size: 1.2rem;
     font-weight: 600;
@@ -37,7 +37,7 @@ html, body{
     z-index: 1;
 }
 
-#btn::before{
+.btn::before{
     content: '';
     position: absolute;
     top: 0;
@@ -49,16 +49,16 @@ html, body{
     transition: 0.5s;
 }
 
-#btn:hover::before{
+.btn:hover::before{
     width: 100%;
 }
 
-#btn:hover{
+.btn:hover{
     color: #081b29;
 }
 
 /* second button */
-#btn:nth-child(2)::before{
+.btn:nth-child(2)::before{
     content: '';
     position: absolute;
     top: 0;
@@ -70,6 +70,6 @@ html, body{
     z-index: -1;
 }
 
-#btn:nth-child(2):hover::before{
+.btn:nth-child(2):hover::before{
     height: 100%;
 }
