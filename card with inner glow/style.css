@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background: black;
+	background-blend-mode: multiply
+}
+
+@property --a {
+	syntax: '<angle>';
+	initial-value: 0deg;
+	inherits: false
+}
+
+.card {
+	overflow: hidden;
+	position: relative;
+	width: 19rem;
+    height: 26rem;
+    display: flex;
+    align-items: center;
+	border-radius: 20px;
+	padding: 0.5rem;
+	color: #ededed;
+	font-size: 2rem;
+	text-align: center;
+	text-transform: uppercase;
+    z-index: 1;
+}
+
+.card::before {
+	position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	border: solid 1.25em;
+    filter: blur(.75em);
+	border-image: 
+		conic-gradient(from var(--a), #669900, #99cc33, #ccee66, 
+				#006699, #3399cc, #990066, #cc3399, 
+				#ff6600, #ff9900, #ffcc00, #669900) 1;
+	animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    to {
+        --a: 1turn;
+    }
+}
