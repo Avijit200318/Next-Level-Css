@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playwrite GB S", serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: white;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.text{
+    position: relative;
+    z-index: 1;
+}
+
+.text h1{
+    font-size: 7rem;
+}
+
+.text p{
+    font-size: 2rem;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("https://img.freepik.com/free-photo/misurina-sunset_181624-34793.jpg?t=st=1736942918~exp=1736946518~hmac=03ddc29226aeb4fc0dae56eb81b229ca68da849bbba440ad69ed947cf1de551e&w=996");
+    background-size: cover;
+    background-position: center;
+
+    mask-image: url("/images/ezgif-3-6b6c1ea089.gif?reload=");
+    mask-size: cover;
+    mask-position: center;
+}
